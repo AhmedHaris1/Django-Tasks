@@ -15,11 +15,11 @@ class UserManagersTest(TestCase):
         except AttributeError:
             pass
         with self.assertRaises(TypeError):
-            User.objects.creat_user()
-        with self.assertraises(TypeError):
+            User.objects.create_user()
+        with self.assertRaises(TypeError):
             User.objects.create_user(email="")
         with self.assertRaises(ValueError):
-            User.objects.creat_user(email="", password="helloworld")
+            User.objects.create_user(email="", password="helloworld")
 
     def test_create_superuser(self):
         User = get_user_model()
