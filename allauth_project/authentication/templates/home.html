@@ -1,0 +1,17 @@
+
+
+{% if request.user.is_authenticated %}
+Welcome: {{user.username}}
+<br>
+<a href="{% url 'account_logout' %}">Logout</a>
+<br>
+<a href="{% url 'password_change' %}">Change password</a>
+{% else %}
+No one is signed in
+<br>
+<a href="{% url 'login' %}">Signin</a>
+<br>
+<a href="{% url 'signup' %}">Signup</a>
+{% endif %}
+
+<!-- <p>{{ email }}</p> -->
